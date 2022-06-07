@@ -6,15 +6,15 @@ A set of macros to enable print-time user interaction with Klipper via Console a
 Heavily relies on [Save_Variables] module
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_persistent_variables.cfg
 
-Makes use of M300 and some custom M300 related macros I mucked with for emitting sounds, so if you're not so
+Makes use of **`M300**` and some custom **`M300_**` related macros I mucked with for emitting sounds, so if you're not so
 interested, or haven't a beeper on your box, comment out related lines: _ui_reminder, _annunciate_input_exception,
 and _annunciate_good_input - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_m300_sounds.cfg
 
-Makes heavy use of the [response] module - I've trapped the stock M118 (using rename_existing) with gcode such
+Makes heavy use of the **`[response]**` module - I've trapped the stock M118 (using rename_existing) with gcode such
 that it uses action_notification vs. FW M118 code.  This enables emission of 'special characters' that M118's
 FW code chokes on - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_gcode_macros.cfg
 
-throughout my configs, virtually all gcode macros have been 'instrumented' - the first and last lines of each gcode
+Throughout my configs, virtually all gcode macros have been 'instrumented' - the first and last lines of each gcode
 block can be deleted.  I have these as I have an ability to trace macro code execution and display same in the
 console - quite powerful for macro development/troubleshooting but of little/no use to others, with rare exception
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_debug_macros.cfg
