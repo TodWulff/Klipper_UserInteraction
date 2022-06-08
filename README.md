@@ -1,9 +1,7 @@
 # Klipper_UserInteraction
 A set of macros to enable print-time user interaction with Klipper via Console and UI buttons (macros).
 
-Video of an early implementation:
-
-!(https://youtu.be/pgBfhVAYsHU)[https://youtu.be/pgBfhVAYsHU]
+Video of an early implementation: https://youtu.be/pgBfhVAYsHU
 
 ## PREREQUISITES:
 
