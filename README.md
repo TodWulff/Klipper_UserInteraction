@@ -40,13 +40,16 @@ passed to the called macro - if required, the called user macro can query svv fo
 
 **`EXCPT_HDLR`**	Macro name is called in the event of an input timeout or faulty input - no params passed - query svv...
 
-For string TYPE, if **`BOUNDS_LO`** is not asserted, defaults to 1
-For string TYPE, if **`BOUNDS_HI`** is not asserted, defaults to 255
+For string TYPE, if **`BOUNDS_LO`** is not asserted, defaults to 1.
 
-For float TYPE, if **`BOUNDS_LO`** is not asserted, defaults to -999999999.0
-For float TYPE, if **`BOUNDS_HI`** is not asserted, defaults to 999999999.0
+For string TYPE, if **`BOUNDS_HI`** is not asserted, defaults to 255.
 
-For integer TYPE, if **`BOUNDS_LO`** is not asserted, defaults to -999999999
+For float TYPE, if **`BOUNDS_LO`** is not asserted, defaults to -999999999.0.
+
+For float TYPE, if **`BOUNDS_HI`** is not asserted, defaults to 999999999.0.
+
+For integer TYPE, if **`BOUNDS_LO`** is not asserted, defaults to -999999999.
+
 For integer TYPE, if **`BOUNDS_HI`** is not asserted, defaults to 999999999
 
 If additional bounds testing is desired/required, it's up to the user implementing this on their printers to craft more granular
@@ -54,23 +57,30 @@ test and validation - by way of the **`RCVR_MACRO`**.  If I've blantantly missed
 
 For optional parameters, read the code to understand implications of relying on defaults.
 
-Again, ALL options are optional and default to something - defaults are as entered or noted
-get_user_input	PROMPT="Enter or Click something:"		# displayed on the console at macro start as a user prompt
-		TYPE=STRING					# 'string' or 'integer' or 'float' - for buttons use string
-		BOUNDS_LO=1		(Int/Flt -999999999)	# min string chars or min numercial value (int/flt)
-		BOUNDS_HI=255		(Int/Flt  999999999)	# max string chars or max numercial value (int/flt)
-		RCVR_MACRO=_test_show_user_input		# to accept param UI_INPUT that will be an int/flt/"string" that was 
-								# input and passes sniff (simple bounds) test
-		TO_PERIOD=120					# in seconds
-		EXCPT_HDLR=_ui_exception_handler		# no params passed - use svv to get runtime specifics if needed
+Again, ALL options are optional and default to something - defaults are as entered or noted:
 
-Example call follows:
+**`get_user_input	PROMPT="Enter or Click something:"`**		# displayed on the console at macro start as a user prompt
+
+		**`TYPE=STRING`**					# 'string' or 'integer' or 'float' - for buttons use string
+		
+		**`BOUNDS_LO=1*``		(Int/Flt -999999999)	# min string chars or min numercial value (int/flt)
+		
+		**`BOUNDS_HI=255`**		(Int/Flt  999999999)	# max string chars or max numercial value (int/flt)
+		
+		**`RCVR_MACRO=_test_show_user_input`**		# to accept param UI_INPUT that will be an int/flt/"string" that was 
+								# input and passes sniff (simple bounds) test
+								
+		**`TO_PERIOD=120`**					# in seconds
+		
+		**`EXCPT_HDLR=_ui_exception_handler`**		# no params passed - use svv to get runtime specifics if needed
+
+###Example call follows:
 This looks for a user to enter a string 1-12 chars long, with a timeout of 60 secs, that forwards (via UI_INPUT param),
 the entered string to the '_test_show_user_input' macro (default if no RCVR_MACRO passed by user call)
 If a timeout happens/faulty input is detected, the _ui_timeout_watchdog/_validate_user_input macros call '_ui_exception_handler' macro
 (which is the default exception handler if no EXCPT_HDLR macro name is passed by the user call)
 
-### get_user_input PROMPT="enter/click something:" TYPE=string BOUNDS_LO=1 BOUNDS_HI=12 RCVR_MACRO=_test_show_user_input TO_PERIOD=60 EXCPT_HDLR=_ui_exception_handler
+### `get_user_input PROMPT="enter/click something:" TYPE=string BOUNDS_LO=1 BOUNDS_HI=12 RCVR_MACRO=_test_show_user_input TO_PERIOD=60 EXCPT_HDLR=_ui_exception_handler`
 
 ## EXCEPTION HANDLER MACRO:
 if a custom **`EXCPT_HDLR`** macro is to be instantiated, it may prove useful to consider the following:
