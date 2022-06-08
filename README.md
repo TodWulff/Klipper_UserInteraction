@@ -60,14 +60,14 @@ For optional parameters, read the code to understand implications of relying on 
 
 Again, ALL options are optional and default to something - defaults are as entered or noted:
 
-		`PROMPT="Awaiting User Input:"`		displayed on the console at macro start as a user prompt
-		`TYPE=STRING`				'string' or 'integer' or 'float' - for buttons use string
-		`BOUNDS_LO=1`				min string chars or min numercial value (Int/Flt -999999999)
-		`BOUNDS_HI=255`				max string chars or max numercial value (Int/Flt  999999999)
-		`RCVR_MACRO=_test_show_user_input`	to accept param UI_INPUT that will be an int/flt/"string" that was 
+		PROMPT="Awaiting User Input:"		displayed on the console at macro start as a user prompt
+		TYPE=STRING					'string' or 'integer' or 'float' - for buttons use string
+		BOUNDS_LO=1					min string chars or min numercial value (Int/Flt -999999999)
+		BOUNDS_HI=255				max string chars or max numercial value (Int/Flt  999999999)
+		RCVR_MACRO=_test_show_user_input	to accept param UI_INPUT that will be an int/flt/"string" that was 
 							input and passes sniff test (simple bounding checks)
-		`TO_PERIOD=120`				in seconds
-		`EXCPT_HDLR=_ui_exception_handler`	no params passed to this proc - use svv to get runtime specifics if needed
+		TO_PERIOD=120				in seconds
+		EXCPT_HDLR=_ui_exception_handler	no params passed to this proc - use svv to get runtime specifics if needed
 
 ### Example call follows:
 This call looks for a user to enter a string 1-12 chars long, with a timeout of 60 secs, that forwards (via UI_INPUT param),
