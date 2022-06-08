@@ -60,7 +60,7 @@ For optional parameters, read the code to understand implications of relying on 
 
 Again, ALL options are optional and default to something - defaults are as entered or noted:
 
-**`get_user_input	PROMPT="Enter or Click something:"`**		# displayed on the console at macro start as a user prompt
+	**`get_user_input	PROMPT="Enter or Click something:"`**		# displayed on the console at macro start as a user prompt
 
 		**`TYPE=STRING`**					# 'string' or 'integer' or 'float' - for buttons use string
 		
@@ -76,12 +76,12 @@ Again, ALL options are optional and default to something - defaults are as enter
 		**`EXCPT_HDLR=_ui_exception_handler`**		# no params passed - use svv to get runtime specifics if needed
 
 ### Example call follows:
-This looks for a user to enter a string 1-12 chars long, with a timeout of 60 secs, that forwards (via UI_INPUT param),
+This call looks for a user to enter a string 1-12 chars long, with a timeout of 60 secs, that forwards (via UI_INPUT param),
 the entered string to the '_test_show_user_input' macro (default if no RCVR_MACRO passed by user call)
 If a timeout happens/faulty input is detected, the _ui_timeout_watchdog/_validate_user_input macros call '_ui_exception_handler' macro
 (which is the default exception handler if no EXCPT_HDLR macro name is passed by the user call)
 
-`get_user_input PROMPT="enter/click something:" TYPE=string BOUNDS_LO=1 BOUNDS_HI=12 RCVR_MACRO=_test_show_user_input TO_PERIOD=60 EXCPT_HDLR=_ui_exception_handler`
+`get_user_input` `PROMPT="enter/click something:"` `TYPE=string` `BOUNDS_LO=1` `BOUNDS_HI=12` `RCVR_MACRO=_test_show_user_input` `TO_PERIOD=60` `EXCPT_HDLR=_ui_exception_handler`
 
 ## EXCEPTION HANDLER MACRO:
 if a custom **`EXCPT_HDLR`** macro is to be instantiated, it may prove useful to consider the following:
@@ -92,19 +92,19 @@ if a custom **`EXCPT_HDLR`** macro is to be instantiated, it may prove useful to
  - a single **`EXCPT_HDLR`** macro services both bad input cases as well as the time-out when waiting on user input.
  - for timeouts the default **`EXCPT_HDLR`** macro simply recalls **`GET_USER_INPUT`** giving user another input context
    - this approach can be altered with a custom **`EXCPT_HDLR`** macro being passed to the **`GET_USER_INPUT`** call
- - When _await_user_input senses user input, _validate_user_input tests for **`TYPE`** and **`BOUNDS_HI`**/**`BOUNDS_LO`** compliance
-   - if input is NOT **`TYPE`** & **`BOUNDS_HI`**/**`BOUNDS_LO`** compliant, _await_user_input recalls **`GET_USER_INPUT`** so user can fix it
-   - if input IS **`TYPE`** & **`BOUNDS_HI`**/**`BOUNDS_LO`** compliant (_ui_bad_input NOT set), input is sent to **`RCVR_MACRO`** via **`UI_INPUT`** param
+ - When `_await_user_input` senses user input, `_validate_user_input` tests for **`TYPE`** and **`BOUNDS_HI`**/**`BOUNDS_LO`** compliance
+   - if input is NOT **`TYPE`** & **`BOUNDS_HI`**/**`BOUNDS_LO`** compliant, `_await_user_input` recalls **`GET_USER_INPUT`** so user can fix it
+   - if input IS **`TYPE`** & **`BOUNDS_HI`**/**`BOUNDS_LO`** compliant (flag `_ui_bad_input` NOT set), input is sent to **`RCVR_MACRO`** via **`UI_INPUT`** param
 
-in most conceivable use cases, the default exception handler/validation macros should be adequate, but want to give others
-options, in the event I haven't considered something.  Either an entirely new **`EXCPT_HDLR`** can be crafted or, as demonstrated
-in _ui_test.cfg's _ui_test_exception_handler (custom **`EXCPT_HDLR`**) code runs and then calls the stock _ui_exception_handler below
+in most conceivable use cases, the default exception handler/validation macros should be adequate.  However, author decided to give others
+options, in the event something wasn't adequately considered.  Either an entirely new **`EXCPT_HDLR`** can be crafted or, as demonstrated
+in _ui_test.cfg's `_ui_test_exception_handler` (custom **`EXCPT_HDLR`**) code runs and then chains to the stock `_ui_exception_handler` below
 
-In _ui_vars, a person implementing this can selectively enable/disable Input Prompt and/or Exception hints.  Hints are
+In `_ui_vars` macro, a person implementing this can selectively enable/disable Input Prompt and/or Exception hints.  Hints are
 little descriptive blurbs as to what the macro is expecting as input - one can enable hints on either the input prompt,
 or disable hints when an input exception is detected/raised.  It is suggested that it is likely best to have exception
 hints enabled, and to have the input prompt detail what sort of input is desired, leaving input hints disabled.
-The _ui_test.cfg file has the START_DEMO macro that iterates through some UI input event - I used it for dev testing,
+The `_ui_test.cfg` file has the START_DEMO macro that iterates through some UI input event - I used it for dev testing,
 it works as a demo.
 
 Some visual examples as it relates to the hint options that can be set in _ui_vars:
@@ -124,3 +124,13 @@ Hints on Input Prompt but not on an Exception:  https://i.imgur.com/Deo2SNr.png 
 Hints on both Input Prompt and when an exception is raised:  https://i.imgur.com/mO7TfWW.png (likely redundant, imo)
 
 ![https://i.imgur.com/mO7TfWW.png](https://i.imgur.com/mO7TfWW.png)
+
+### Closing comments:
+This was/is a quite deep rabbit hole.  Author MegaHurtz 🇺🇸#6544 can be reached on a number of different Discord channels:
+- Voron Kit Feedback
+- Voron Design
+- Klipper
+- Mainsail
+- ...
+
+Don't hesitate to reach out as may be needed.  Have a great day.  Happy Printing!
