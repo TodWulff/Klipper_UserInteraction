@@ -7,8 +7,8 @@ Heavily relies on `[Save_Variables]` module
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_persistent_variables.cfg
 
 Makes use of **`M300`** and some custom **`M300_`** related macros I mucked with for emitting sounds, so if you're not so
-interested, or haven't a beeper on your box, comment out related lines: _ui_reminder, _annunciate_input_exception,
-and _annunciate_good_input - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_m300_sounds.cfg
+interested, or haven't a beeper on your box, comment out related lines: `_ui_reminder`, `_annunciate_input_exception`,
+and `_annunciate_good_input` - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_m300_sounds.cfg
 
 Makes heavy use of the **`[response]`** module - I've trapped the stock M118 (using rename_existing) with gcode such
 that it uses action_notification vs. FW M118 code.  This enables emission of 'special characters' that M118's
