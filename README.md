@@ -60,7 +60,7 @@ test and validation - by way of the **`RCVR_MACRO`**.  If I've blantantly missed
 
 For optional parameters, read the code to understand implications of relying on defaults.
 
-Again, ALL options are optional and default to something - Defaults:
+Again, ALL parameters are optional and default to something:
 
 	PROMPT="Awaiting User Input:"		displayed on the console at macro start as a user prompt
 	TYPE=STRING				'string' or 'integer' or 'float' - for buttons use string
