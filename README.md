@@ -25,7 +25,8 @@ Orienting it under the console pane will allow it to become intuitive with a sma
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
 Optional Parameters:
-**`PROMPT`**		Text to display in console as a user input prompt
+
+**`PROMPT`**		Quoted Text to display in console as a user input prompt
 
 **`RCVR_MACRO`**	Macro name to run when VALID input received - UI_INPUT param, containing user input contents is 
 passed to the called macro - if required, the called user macro can query svv for additional details.
@@ -74,13 +75,13 @@ Again, ALL options are optional and default to something - defaults are as enter
 		
 		**`EXCPT_HDLR=_ui_exception_handler`**		# no params passed - use svv to get runtime specifics if needed
 
-###Example call follows:
+### Example call follows:
 This looks for a user to enter a string 1-12 chars long, with a timeout of 60 secs, that forwards (via UI_INPUT param),
 the entered string to the '_test_show_user_input' macro (default if no RCVR_MACRO passed by user call)
 If a timeout happens/faulty input is detected, the _ui_timeout_watchdog/_validate_user_input macros call '_ui_exception_handler' macro
 (which is the default exception handler if no EXCPT_HDLR macro name is passed by the user call)
 
-### `get_user_input PROMPT="enter/click something:" TYPE=string BOUNDS_LO=1 BOUNDS_HI=12 RCVR_MACRO=_test_show_user_input TO_PERIOD=60 EXCPT_HDLR=_ui_exception_handler`
+`get_user_input PROMPT="enter/click something:" TYPE=string BOUNDS_LO=1 BOUNDS_HI=12 RCVR_MACRO=_test_show_user_input TO_PERIOD=60 EXCPT_HDLR=_ui_exception_handler`
 
 ## EXCEPTION HANDLER MACRO:
 if a custom **`EXCPT_HDLR`** macro is to be instantiated, it may prove useful to consider the following:
