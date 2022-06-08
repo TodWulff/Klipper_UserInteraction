@@ -3,7 +3,7 @@ A set of macros to enable print-time user interaction with Klipper via Console a
 
 ## PREREQUISITES:
 
-Heavily relies on [Save_Variables] module
+Heavily relies on `[Save_Variables]` module
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_persistent_variables.cfg
 
 Makes use of **`M300`** and some custom **`M300_`** related macros I mucked with for emitting sounds, so if you're not so
