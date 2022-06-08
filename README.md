@@ -6,11 +6,11 @@ A set of macros to enable print-time user interaction with Klipper via Console a
 Heavily relies on [Save_Variables] module
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_persistent_variables.cfg
 
-Makes use of `**M300**` and some custom `**M300_**` related macros I mucked with for emitting sounds, so if you're not so
+Makes use of **`M300`** and some custom **`M300_`** related macros I mucked with for emitting sounds, so if you're not so
 interested, or haven't a beeper on your box, comment out related lines: _ui_reminder, _annunciate_input_exception,
 and _annunciate_good_input - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_m300_sounds.cfg
 
-Makes heavy use of the `**[response]**` module - I've trapped the stock M118 (using rename_existing) with gcode such
+Makes heavy use of the **`[response]`** module - I've trapped the stock M118 (using rename_existing) with gcode such
 that it uses action_notification vs. FW M118 code.  This enables emission of 'special characters' that M118's
 FW code chokes on - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_gcode_macros.cfg
 
@@ -43,7 +43,7 @@ For integer TYPE, if `BOUNDS_LO` is not asserted, defaults to -999999999
 For integer TYPE, if `BOUNDS_HI` is not asserted, defaults to 999999999
 
 If additional bounds testing is desired/required, it's up to the user implementing this on their printers to craft more granular
-test and validation - by way of the `**RCVR_MACRO**`.  If I've blantantly missed something, then let me know. :)
+test and validation - by way of the **`RCVR_MACRO`**.  If I've blantantly missed something, then let me know. :)
 
 For optional parameters, read the code to understand implications of relying on defaults.
 
@@ -66,17 +66,17 @@ If a timeout happens/faulty input is detected, the _ui_timeout_watchdog/_validat
 ### get_user_input PROMPT="enter/click something:" TYPE=string BOUNDS_LO=1 BOUNDS_HI=12 RCVR_MACRO=_test_show_user_input TO_PERIOD=60 EXCPT_HDLR=_ui_exception_handler
 
 ## EXCEPTION HANDLER MACRO:
-if a custom `**EXCPT_HDLR**` macro is to be instantiated, it may prove useful to consider the following:
- - `**GET_USER_INPUT**` does the following:
-    a. initializes states and then displays the user `**PROMPT**`
-    b. sets the timeout watchdog to fire after the passed/default `**TO_PERIOD**`
-    c. puts `**_await_user_input**` into a recursive loop
- - a single `**EXCPT_HDLR**` macro services both bad input cases as well as the time-out when waiting on user input.
- - for timeouts the default `**EXCPT_HDLR**` macro simply recalls `**GET_USER_INPUT**` giving user another input context
-   - this approach can be altered with a custom `**EXCPT_HDLR**` macro being passed to the `**GET_USER_INPUT**` call
- - When _await_user_input senses user input, _validate_user_input tests for `**TYPE**` and `**BOUNDS_HI**`/`**BOUNDS_LO**` compliance
-   - if input is NOT `**TYPE & `**BOUNDS_HI/`**BOUNDS_LO compliant, _await_user_input recalls `**GET_USER_INPUT**` so user can fix it
-   - if input IS `**TYPE**` & `**BOUNDS_HI**`/`**BOUNDS_LO**` compliant (_ui_bad_input NOT set), input is sent to `**RCVR_MACRO**` via `**UI_INPUT**` param
+if a custom **`EXCPT_HDLR`** macro is to be instantiated, it may prove useful to consider the following:
+ - **`GET_USER_INPUT`** does the following:
+    a. initializes states and then displays the user **`PROMPT`**
+    b. sets the timeout watchdog to fire after the passed/default **`TO_PERIOD`**
+    c. puts **`_await_user_input`** into a recursive loop
+ - a single **`EXCPT_HDLR`** macro services both bad input cases as well as the time-out when waiting on user input.
+ - for timeouts the default **`EXCPT_HDLR`** macro simply recalls **`GET_USER_INPUT`** giving user another input context
+   - this approach can be altered with a custom **`EXCPT_HDLR`** macro being passed to the **`GET_USER_INPUT`** call
+ - When _await_user_input senses user input, _validate_user_input tests for **`TYPE`** and **`BOUNDS_HI`**/**`BOUNDS_LO`** compliance
+   - if input is NOT **`TYPE & **`BOUNDS_HI/**`BOUNDS_LO compliant, _await_user_input recalls **`GET_USER_INPUT`** so user can fix it
+   - if input IS **`TYPE`** & **`BOUNDS_HI`**/**`BOUNDS_LO`** compliant (_ui_bad_input NOT set), input is sent to **`RCVR_MACRO`** via **`UI_INPUT`** param
 
 in most conceivable use cases, the default exception handler/validation macros should be adequate, but want to give others
 options, in the event I haven't considered something.  Either an entirely new EXCPT_HDLR can be crafted or, as demonstrated
