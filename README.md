@@ -25,10 +25,10 @@ Orienting it under the console pane will allow it to become intuitive with a sma
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
 Optional Parameters:
-
 **`PROMPT`**		Text to display in console as a user input prompt
 
-**`RCVR_MACRO`**	Macro name to run when VALID input received - UI_INPUT param passed to proc - if reqd, query svv for moar info
+**`RCVR_MACRO`**	Macro name to run when VALID input received - UI_INPUT param, containing user input contents is 
+passed to the called macro - if required, the called user macro can query svv for additional details.
 
 **`TYPE`**		The TYPE of input needed - one of these three string/str, integer/int, float/flt
 
