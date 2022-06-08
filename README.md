@@ -58,11 +58,11 @@ test and validation - by way of the **`RCVR_MACRO`**.  If I've blantantly missed
 
 For optional parameters, read the code to understand implications of relying on defaults.
 
-Again, ALL options are optional and default to something - defaults are as entered or noted:
+Again, ALL options are optional and default to something - Defaults:
 
 		PROMPT="Awaiting User Input:"		displayed on the console at macro start as a user prompt
-		TYPE=STRING					'string' or 'integer' or 'float' - for buttons use string
-		BOUNDS_LO=1					min string chars or min numercial value (Int/Flt -999999999)
+		TYPE=STRING				'string' or 'integer' or 'float' - for buttons use string
+		BOUNDS_LO=1				min string chars or min numercial value (Int/Flt -999999999)
 		BOUNDS_HI=255				max string chars or max numercial value (Int/Flt  999999999)
 		RCVR_MACRO=_test_show_user_input	to accept param UI_INPUT that will be an int/flt/"string" that was 
 							input and passes sniff test (simple bounding checks)
@@ -81,16 +81,16 @@ If a timeout happens/faulty input is detected, the _ui_timeout_watchdog/_validat
 if a custom **`EXCPT_HDLR`** macro is to be instantiated, it may prove useful to consider the following:
  - **`GET_USER_INPUT`** does the following:
    - initializes states and then displays the user **`PROMPT`**
-   - sets the timeout watchdog to fire after the passed/default **`TO_PERIOD`**
-   - puts **`_await_user_input`** into a recursive loop
+   - sets the timeout watchdog to fire after the asserted (120s default) **`TO_PERIOD`**
+   - puts **`_await_user_input`** into a recursive loop, with a period defined in _ui_vars
  - a single **`EXCPT_HDLR`** macro services both bad input cases as well as the time-out when waiting on user input.
- - for timeouts the default **`EXCPT_HDLR`** macro simply recalls **`GET_USER_INPUT`** giving user another input context
+ - for timeouts the **default** **`EXCPT_HDLR`** macro simply recalls **`GET_USER_INPUT`** giving user another input context
    - this approach can be altered with a custom **`EXCPT_HDLR`** macro being passed to the **`GET_USER_INPUT`** call
- - When `_await_user_input` senses user input, `_validate_user_input` tests for **`TYPE`** and **`BOUNDS_HI`**/**`BOUNDS_LO`** compliance
+ - When `_await_user_input` detects input from user, `_validate_user_input` tests for **`TYPE`** and **`BOUNDS_HI`**/**`BOUNDS_LO`** compliance
    - if input is NOT **`TYPE`** & **`BOUNDS_HI`**/**`BOUNDS_LO`** compliant, `_await_user_input` recalls **`GET_USER_INPUT`** so user can fix it
    - if input IS **`TYPE`** & **`BOUNDS_HI`**/**`BOUNDS_LO`** compliant (flag `_ui_bad_input` NOT set), input is sent to **`RCVR_MACRO`** via **`UI_INPUT`** param
 
-in most conceivable use cases, the default exception handler/validation macros should be adequate.  However, author decided to give others
+In most conceivable use cases, the default exception handler/validation macros should be adequate.  However, author decided to give others
 options, in the event something wasn't adequately considered.  Either an entirely new **`EXCPT_HDLR`** can be crafted or, as demonstrated
 in _ui_test.cfg's `_ui_test_exception_handler` (custom **`EXCPT_HDLR`**) code runs and then chains to the stock `_ui_exception_handler` below
 
@@ -128,3 +128,5 @@ This was/is a quite deep rabbit hole.  Author MegaHurtz 🇺🇸#6544 can be rea
 - ...
 
 Don't hesitate to reach out as may be needed.  Have a great day.  Happy Printing!
+
+~MHz
