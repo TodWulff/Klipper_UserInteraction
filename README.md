@@ -25,13 +25,13 @@ Orienting it under the console pane will allow it to become intuitive with a sma
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
 Optional Parameters:
-**PROMPT**		Text to display in console as a user input prompt
-**RCVR_MACRO**	Macro name to run when VALID input received - UI_INPUT param passed to proc - if reqd, query svv for moar info
-**TYPE**		The TYPE of input needed - one of these three string/str, integer/int, float/flt
-**BOUNDS_HI**	if TYPE is float/flt, input must be >=lo and <=hi - for integer/int, input must be >=floor(lo) and <=ceiling(hi)
-**BOUNDS_LO**	 - if string/str TYPE, character count must be >=floor(lo) and <=ceiling(hi)
-**TO_PERIOD**	Period in Integer seconds to wait for user input - a reminder M300 fires at rate in _ui_vars while waiting
-**EXCPT_HDLR**	Macro name is called in the event of an input timeout or faulty input - no params passed - query svv...
+**`PROMPT`**	Text to display in console as a user input prompt
+**`RCVR_MACRO`**	Macro name to run when VALID input received - UI_INPUT param passed to proc - if reqd, query svv for moar info
+**`TYPE`**	The TYPE of input needed - one of these three string/str, integer/int, float/flt
+**`BOUNDS_HI`**	if TYPE is float/flt, input must be >=lo and <=hi - for integer/int, input must be >=floor(lo) and <=ceiling(hi)
+**`BOUNDS_LO`**	 - if string/str TYPE, character count must be >=floor(lo) and <=ceiling(hi)
+**`TO_PERIOD`**	Period in Integer seconds to wait for user input - a reminder M300 fires at rate in _ui_vars while waiting
+**`EXCPT_HDLR`**	Macro name is called in the event of an input timeout or faulty input - no params passed - query svv...
 
 For string TYPE, if `BOUNDS_LO` is not asserted, defaults to 1
 For string TYPE, if `BOUNDS_HI` is not asserted, defaults to 255
