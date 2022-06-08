@@ -14,14 +14,12 @@ Makes heavy use of the **`[response]`** module - I've trapped the stock M118 (us
 that it uses action_notification vs. FW M118 code.  This enables emission of 'special characters' that M118's
 FW code chokes on - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_gcode_macros.cfg
 
-Throughout my configs, virtually all gcode macros have been 'instrumented' - the first and last lines of each gcode block can be deleted.  
+Throughout my configs, virtually all gcode macros have been 'instrumented' - the first and last lines of each gcode block can be deleted.
 I have these as I have an ability to trace macro code execution and display same in the console - quite powerful for macro development/
 troubleshooting but of little/no use to others, with rare exception - 
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_debug_macros.cfg
 
-Users should consider adding a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein.  
-Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.  
-For Fluidd or other Moonraker Clients (Mooncord/Telegram Bot/...), I defer to others to adapt the macros for use therein.
+Users should consider adding a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein.  Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.  For Fluidd or other Moonraker Clients (Mooncord/Telegram Bot/...), I defer to others to adapt the macros for use therein.
 
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
