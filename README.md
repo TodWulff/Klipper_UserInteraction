@@ -85,28 +85,30 @@ If a timeout happens/faulty input is detected, the _ui_timeout_watchdog/_validat
 ## EXCEPTION HANDLER MACRO:
 if a custom **`EXCPT_HDLR`** macro is to be instantiated, it may prove useful to consider the following:
  - **`GET_USER_INPUT`** does the following:
-    a. initializes states and then displays the user **`PROMPT`**
-    b. sets the timeout watchdog to fire after the passed/default **`TO_PERIOD`**
-    c. puts **`_await_user_input`** into a recursive loop
+   - initializes states and then displays the user **`PROMPT`**
+   - sets the timeout watchdog to fire after the passed/default **`TO_PERIOD`**
+   - puts **`_await_user_input`** into a recursive loop
  - a single **`EXCPT_HDLR`** macro services both bad input cases as well as the time-out when waiting on user input.
  - for timeouts the default **`EXCPT_HDLR`** macro simply recalls **`GET_USER_INPUT`** giving user another input context
    - this approach can be altered with a custom **`EXCPT_HDLR`** macro being passed to the **`GET_USER_INPUT`** call
  - When _await_user_input senses user input, _validate_user_input tests for **`TYPE`** and **`BOUNDS_HI`**/**`BOUNDS_LO`** compliance
-   - if input is NOT **`TYPE & **`BOUNDS_HI/**`BOUNDS_LO compliant, _await_user_input recalls **`GET_USER_INPUT`** so user can fix it
+   - if input is NOT **`TYPE`** & **`BOUNDS_HI`**/**`BOUNDS_LO`** compliant, _await_user_input recalls **`GET_USER_INPUT`** so user can fix it
    - if input IS **`TYPE`** & **`BOUNDS_HI`**/**`BOUNDS_LO`** compliant (_ui_bad_input NOT set), input is sent to **`RCVR_MACRO`** via **`UI_INPUT`** param
 
 in most conceivable use cases, the default exception handler/validation macros should be adequate, but want to give others
-options, in the event I haven't considered something.  Either an entirely new EXCPT_HDLR can be crafted or, as demonstrated
-in _ui_test.cfg's _ui_test_exception_handler (custom EXCPT_HDLR) code runs and then calls the stock _ui_exception_handler below
+options, in the event I haven't considered something.  Either an entirely new **`EXCPT_HDLR`** can be crafted or, as demonstrated
+in _ui_test.cfg's _ui_test_exception_handler (custom **`EXCPT_HDLR`**) code runs and then calls the stock _ui_exception_handler below
 
 In _ui_vars, a person implementing this can selectively enable/disable Input Prompt and/or Exception hints.  Hints are
-little descriptive blurbs as to what the code is expecting as input - one can enable hints on either the input prompt,
+little descriptive blurbs as to what the macro is expecting as input - one can enable hints on either the input prompt,
 or disable hints when an input exception is detected/raised.  It is suggested that it is likely best to have exception
-hints enabled, and to have the input prompt detail what sort of input is desired, leaving input hints disabled.  The _ui_test.cfg file has the START_DEMO
-macro that iterates through some UI input event - I used it for dev testing, it works as a demo.
+hints enabled, and to have the input prompt detail what sort of input is desired, leaving input hints disabled.
+The _ui_test.cfg file has the START_DEMO macro that iterates through some UI input event - I used it for dev testing,
+it works as a demo.
+
 Some visual examples as it relates to the hint options that can be set in _ui_vars:
 
-No Hints on Exception nor Input Prompt: https://i.imgur.com/PDPOmTJ.png (likely too? terse - make prompt/preamble detailed)
+No Hints on Exception nor Input Prompt: https://i.imgur.com/PDPOmTJ.png (likely too? terse - user should make the preamble/prompt detailed)
 
 ![https://i.imgur.com/PDPOmTJ.png](https://i.imgur.com/PDPOmTJ.png)
 
