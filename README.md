@@ -19,7 +19,7 @@ block can be deleted.  I have these as I have an ability to trace macro code exe
 console - quite powerful for macro development/troubleshooting but of little/no use to others, with rare exception - 
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_debug_macros.cfg
 
-Users should consider adding a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein
+Users should consider adding a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein.  
 Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.
 For Fluidd or other Moonraker Clients (Mooncord/Telegram Bot/...), I defer to others to adapt the macros for use therein.
 
