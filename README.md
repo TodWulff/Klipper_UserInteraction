@@ -20,7 +20,8 @@ console - quite powerful for macro development/troubleshooting but of little/no 
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_debug_macros.cfg
 
 Users should add a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein
-Orienting it under the console pane will allow it to become intuitive with a small bit of use
+Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.
+For Fluidd or other Moonraker Clients (Mooncord/Telegram Bob/...), I defer to others to adapt the macros for use with same.
 
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
@@ -120,7 +121,7 @@ Hints on both Input Prompt and when an exception is raised:  https://i.imgur.com
 ![https://i.imgur.com/mO7TfWW.png](https://i.imgur.com/mO7TfWW.png)
 
 ### Closing comments:
-This was/is a quite deep rabbit hole.  Author MegaHurtz 🇺🇸#6544 can be reached on a number of different Discord channels:
+This was/is a quite deep rabbit hole.  Author MegaHurtz 🇺🇸#6544 can be reached on a number of different Discord servers:
 - Voron Kit Feedback
 - Voron Design
 - Klipper
