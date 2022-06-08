@@ -105,7 +105,7 @@ it works as a demo.
 
 ## Some visual examples as it relates to the hint options that can be set in `_ui_vars`:
 
-No Hints on Exception nor Input Prompt: https://i.imgur.com/PDPOmTJ.png (likely too? terse - user should make the preamble/prompt detailed)
+No Hints on Exception nor Input Prompt: https://i.imgur.com/PDPOmTJ.png (likely too terse - user should make the preamble/prompt detailed)
 
 ![https://i.imgur.com/PDPOmTJ.png](https://i.imgur.com/PDPOmTJ.png)
 
