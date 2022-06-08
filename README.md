@@ -20,7 +20,7 @@ console - quite powerful for macro development/troubleshooting but of little/no 
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_debug_macros.cfg
 
 Users should consider adding a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein.  
-Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.
+Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.  
 For Fluidd or other Moonraker Clients (Mooncord/Telegram Bot/...), I defer to others to adapt the macros for use therein.
 
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
