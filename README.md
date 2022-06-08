@@ -122,7 +122,7 @@ Hints on both Input Prompt and when an exception is raised:  https://i.imgur.com
 ![https://i.imgur.com/mO7TfWW.png](https://i.imgur.com/mO7TfWW.png)
 
 ### Closing comments:
-This was/is a quite deep rabbit hole.  Author MegaHurtz 🇺🇸#6544 can be reached on a number of different Discord servers:
+This was/is a quite deep rabbit hole.  Author `MegaHurtz 🇺🇸#6544` can be reached on a number of different Discord servers:
 - Voron Kit Feedback
 - Voron Design
 - Klipper
