@@ -16,12 +16,12 @@ FW code chokes on - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_g
 
 Throughout my configs, virtually all gcode macros have been 'instrumented' - the first and last lines of each gcode
 block can be deleted.  I have these as I have an ability to trace macro code execution and display same in the
-console - quite powerful for macro development/troubleshooting but of little/no use to others, with rare exception
+console - quite powerful for macro development/troubleshooting but of little/no use to others, with rare exception - 
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_debug_macros.cfg
 
-Users should add a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein
+Users should consider adding a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein
 Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.
-For Fluidd or other Moonraker Clients (Mooncord/Telegram Bob/...), I defer to others to adapt the macros for use with same.
+For Fluidd or other Moonraker Clients (Mooncord/Telegram Bob/...), I defer to others to adapt the macros for use therein.
 
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
@@ -103,7 +103,7 @@ hints enabled, and to have the input prompt detail what sort of input is desired
 The `_ui_test.cfg` file has the START_DEMO macro that iterates through some UI input event - I used it for dev testing,
 it works as a demo.
 
-Some visual examples as it relates to the hint options that can be set in _ui_vars:
+## Some visual examples as it relates to the hint options that can be set in `_ui_vars`:
 
 No Hints on Exception nor Input Prompt: https://i.imgur.com/PDPOmTJ.png (likely too? terse - user should make the preamble/prompt detailed)
 
@@ -121,7 +121,7 @@ Hints on both Input Prompt and when an exception is raised:  https://i.imgur.com
 
 ![https://i.imgur.com/mO7TfWW.png](https://i.imgur.com/mO7TfWW.png)
 
-### Closing comments:
+## Closing comments:
 This was/is a quite deep rabbit hole.  Author `MegaHurtz 🇺🇸#6544` can be reached on a number of different Discord servers:
 - Voron Kit Feedback
 - Voron Design
