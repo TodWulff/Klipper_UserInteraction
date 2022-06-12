@@ -3,6 +3,9 @@ A set of macros to enable print-time user interaction with Klipper via Console a
 
 Video of an early implementation: https://youtu.be/pgBfhVAYsHU
 
+Here is an example of a real world use case - optionally rebooting after an ERCF calibration event:
+![https://i.imgur.com/9GNaG8N.png](https://i.imgur.com/9GNaG8N.png)
+
 ## PREREQUISITES:
 
 Heavily relies on `[Save_Variables]` module
