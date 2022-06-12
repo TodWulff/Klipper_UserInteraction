@@ -3,6 +3,10 @@ A set of macros to enable print-time user interaction with Klipper via Console a
 
 Video of an early implementation: https://youtu.be/pgBfhVAYsHU
 
+Note that the files herein are an early snapshot.  The production code is attainable via my printer config:
+https://github.com/TodWulff/V2.2526_Config/blob/main/_user_interaction.cfg and
+https://github.com/TodWulff/V2.2526_Config/blob/main/_ui_test.cfg
+
 Here is an example of a real world use case - optionally rebooting after an ERCF calibration event:
 ![ https://i.imgur.com/PvLhUWd.png](https://i.imgur.com/PvLhUWd.png)
 ![https://i.imgur.com/Tn1ANaH.png](https://i.imgur.com/Tn1ANaH.png)
