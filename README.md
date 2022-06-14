@@ -7,7 +7,10 @@ Note that the files herein are an early snapshot.  The production code is attain
 https://github.com/TodWulff/V2.2526_Config/blob/main/_user_interaction.cfg and
 https://github.com/TodWulff/V2.2526_Config/blob/main/_ui_test.cfg
 
-Here is an example of a real world use case - optionally rebooting after an ERCF calibration event:
+Here is an example of a real world use case - optionally keeping heaters on & unloading filament @ print end:
+![https://i.imgur.com/jfVYFZx.png](https://i.imgur.com/jfVYFZx.png)
+
+Here is another example of a real world use case - optionally rebooting after an ERCF calibration event:
 ![ https://i.imgur.com/PvLhUWd.png](https://i.imgur.com/PvLhUWd.png)
 ![https://i.imgur.com/Tn1ANaH.png](https://i.imgur.com/Tn1ANaH.png)
 
