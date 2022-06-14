@@ -92,7 +92,7 @@ if a custom **`EXCPT_HDLR`** macro is to be instantiated, it may prove useful to
  - **`GET_USER_INPUT`** does the following:
    - initializes states and then displays the user **`PROMPT`**
    - sets the timeout watchdog to fire after the asserted (120s default) **`TO_PERIOD`**
-   - puts **`_await_user_input`** into a recursive loop, with a period defined in _ui_vars
+   - puts **`_await_user_input`** into a recursive loop, non-blocking while waiting, with a period defined in _ui_vars
  - a single **`EXCPT_HDLR`** macro services both bad input cases as well as the time-out when waiting on user input.
  - for timeouts the **default** **`EXCPT_HDLR`** macro simply recalls **`GET_USER_INPUT`** giving user another input context
    - this approach can be altered with a custom **`EXCPT_HDLR`** macro being passed to the **`GET_USER_INPUT`** call
