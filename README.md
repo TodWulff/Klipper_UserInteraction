@@ -54,6 +54,10 @@ passed to the called macro - if required, the called user macro can query svv fo
 
 **`EXCPT_HDLR`**	Macro name is called in the event of an input timeout or faulty input - no params passed - query svv...
 
+**`TO_CYCL_DEF`**	iterations of timeouts before TO_RESP_DEF is sent as UI_INPUT to RCVR_MACRO - default: -1 to disable behavior
+
+**`TO_RESP_DEF`**	value to pass as UI_INPUT if TO_CYCL_DEF count is >= 1 and reaches 0 when incremented with each timeout.
+
 For string TYPE, if **`BOUNDS_LO`** is not asserted, defaults to 1.
 
 For string TYPE, if **`BOUNDS_HI`** is not asserted, defaults to 255.
