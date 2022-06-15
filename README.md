@@ -50,7 +50,9 @@ passed to the called macro - if required, the called user macro can query svv fo
 
 **`BOUNDS_LO`**	 - if string/str TYPE, character count must be >=floor(lo) and <=ceiling(hi)
 
-**`TO_PERIOD`**	Period in Integer seconds to wait for user input - a reminder M300 fires at rate in \_ui_vars while waiting
+**`TO_PERIOD`**		Period in Integer seconds to wait for user input
+
+**`RMDR_PERIOD`**	Overrides the default reminder period set in \_ui_vars while waiting for user input
 
 **`EXCPT_HDLR`**	Macro name is called in the event of an input timeout or faulty input - no params passed - query svv...
 
