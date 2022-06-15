@@ -3,7 +3,7 @@ A set of macros to enable print-time user interaction with Klipper via Console a
 
 Video of an early implementation: https://youtu.be/pgBfhVAYsHU
 
-Note that the files herein are an early snapshot.  The production code is attainable via my printer config:
+Note that the files herein may not be the latest - 'production' code is attainable via my printer config:
 https://github.com/TodWulff/V2.2526_Config/blob/main/_user_interaction.cfg and
 https://github.com/TodWulff/V2.2526_Config/blob/main/_ui_test.cfg
 
