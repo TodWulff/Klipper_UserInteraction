@@ -77,16 +77,31 @@ test and validation - by way of the **`RCVR_MACRO`**.  If I've blantantly missed
 
 For optional parameters, read the code to understand implications of relying on defaults.
 
-Again, ALL parameters are optional and default to something:
+Again, ALL parameters are optional and default to something (depicted in the following):
 
 	PROMPT="Awaiting User Input:"		displayed on the console at macro start as a user prompt
-	TYPE=STRING				'string' or 'integer' or 'float' - for buttons use string
+	TYPE=STRING				'string'('str') or 'integer'('int') or 'float'('flt') - for buttons use string
 	BOUNDS_LO=1				min string chars or min numercial value (Int/Flt -999999999)
 	BOUNDS_HI=255				max string chars or max numercial value (Int/Flt  999999999)
-	RCVR_MACRO=_test_show_user_input	to accept param UI_INPUT that will be an int/flt/"string" that was 
+	RCVR_MACRO="_test_show_user_input"	to accept param UI_INPUT that will be an int/flt/"string" that was 
 						input and passes sniff test (simple bounding checks)
 	TO_PERIOD=120				in seconds
-	EXCPT_HDLR=_ui_exception_handler	no params passed to this proc - use svv to get runtime specifics if needed
+	EXCPT_HDLR="_ui_exception_handler"	no params passed to this proc - use svv to get runtime specifics if needed
+	TO_CYCL_DEF=-1				
+	TO_RESP_DEF="NULL"			if TO_CYCLES >=0, this param will be passed to RCVR_MACRO via UI_INPUT if no user input received
+	RMDR_PERIOD=15				reminder bleeps every n seconds - 0 will disable reminder beeps
+
+Also, there are four other module macro variables that affect the function of the macros  
+
+	variable_ui_input_check_recurse_period:	  0.5	# seconds - period between checking for input when expected - 0.5s is good - less leads to more host
+							# cycle consumption, larger leads to reduced perceived responsiveness
+	variable_ui_reminder_enable:		  1	# bool 1/0 - 0 overtly disables reminder bleeps regardless of RMDR_PERIOD param
+	variable_ui_enable_input_hints:		  0	# bool 1/0 - defaults to disabling hints on input prompt
+	variable_ui_disable_exception_hints:	  0	# bool 1/0 - defaults to enabling hints on an exception event
+	
+	These can be programmatically altered during runtime via use of SET_GCODE_VARIABLE gcode command - i.e.:
+
+		SET_GCODE_VARIABLE MACRO=_ui_vars VARIABLE=ui_enable_input_hints VALUE=1
 
 ### Example call follows:
 This call looks for a user to enter a string 1-12 chars long, with a timeout of 60 secs, that forwards (via UI_INPUT param),
@@ -94,7 +109,7 @@ the entered string to the '_test_show_user_input' macro (default if no RCVR_MACR
 If a timeout happens/faulty input is detected, the _ui_timeout_watchdog/_validate_user_input macros call '_ui_exception_handler' macro
 (which is the default exception handler if no EXCPT_HDLR macro name is passed by the user call)
 
-`get_user_input` `PROMPT="enter/click something:"` `TYPE=string` `BOUNDS_LO=1` `BOUNDS_HI=12` `RCVR_MACRO=_test_show_user_input` `TO_PERIOD=60` `EXCPT_HDLR=_ui_exception_handler`
+`get_user_input` `PROMPT="Enter/click something:"` `TYPE=string` `BOUNDS_LO=1` `BOUNDS_HI=12` `RCVR_MACRO=_test_show_user_input` `TO_PERIOD=60` `EXCPT_HDLR=_ui_exception_handler`
 
 ## EXCEPTION HANDLER MACRO:
 if a custom **`EXCPT_HDLR`** macro is to be instantiated, it may prove useful to consider the following:
