@@ -130,7 +130,7 @@ For optional parameters, read the code to understand implications of relying on 
 
 Again, ALL parameters are optional and default to something (depicted in the following):
 
-	PROMPT="Awaiting User Input:"		displayed on the console at macro start as a user prompt
+	`PROMPT="Awaiting User Input:"		displayed on the console at macro start as a user prompt
 	TYPE=STRING				'string'('str') or 'integer'('int') or 'float'('flt') - for buttons use string
 	BOUNDS_LO=1				min string chars or min numerical value (Int/Flt -999999999)
 	BOUNDS_HI=255				max string chars or max numerical value (Int/Flt  999999999)
@@ -140,11 +140,11 @@ Again, ALL parameters are optional and default to something (depicted in the fol
 	EXCPT_HDLR="_ui_exception_handler"	no params passed to this proc - use svv to get runtime specifics if needed
 	TO_CYCL_DEF=-1				
 	TO_RESP_DEF="NULL"			if TO_CYCLES >=0, this param will be passed to RCVR_MACRO via UI_INPUT if no user input received
-	RMDR_PERIOD=15				reminder bleeps every n seconds - 0 will disable reminder beeps
+	RMDR_PERIOD=15				reminder bleeps every n seconds - 0 will disable reminder beeps`
 
 Also, there are six other module macro variables that affect the function of the macros
 
-	variable_ui_input_check_recurse_period:	  0.5	# seconds - period between checking for input when expected - 0.5s is good - less leads to more host
+	`variable_ui_input_check_recurse_period:	  0.5	# seconds - period between checking for input when expected - 0.5s is good - less leads to more host
 								# cycle consumption, larger leads to reduced perceived responsiveness
 	variable_ui_reminder_enable:		  1	# bool 1/0 - 0 overtly disables reminder bleeps regardless of RMDR_PERIOD param
 	variable_ui_enable_input_hints:		  0	# bool 1/0 - defaults to disabling hints on input prompt
@@ -152,7 +152,7 @@ Also, there are six other module macro variables that affect the function of the
 	
 	# if a TTS module is installed and operable, these can become salient wrt the employment of this module in user Klipper macros:
 	variable_ui_input_readback_flag:	  0	#bool 1/0 - 1 enabled read-back of user input value - overly chatty, but helpful for peeps with accessibility issues, maybe?
-	variable_ui_button_readback_flag:	  0	#bool 1/0 - 1 enabled read-back of user UI button click - overly chatty, but helpful for peeps with accessibility issues, maybe?```
+	variable_ui_button_readback_flag:	  0	#bool 1/0 - 1 enabled read-back of user UI button click - overly chatty, but helpful for peeps with accessibility issues, maybe?`
 
 	These can be programmatically altered during runtime via use of SET_GCODE_VARIABLE gcode command - i.e.:
 
