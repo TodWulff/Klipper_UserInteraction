@@ -210,7 +210,7 @@ Hints on both Input Prompt and when an exception is raised:  https://i.imgur.com
 
 ## Closing comments:
 This was/is a quite deep rabbit hole.  Author `MegaHurtz 🇺🇸#6544` can be reached on a number of different Discord servers:
-- Voron Kit Feedback
+- DIY 3D Printer Kit Feedback
 - Voron Design
 - Klipper
 - Mainsail
