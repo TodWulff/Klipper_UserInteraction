@@ -30,7 +30,7 @@ Other cases in which I employ this module in my daily printing workflow:
 - At print end, give user opportunity to push current configs up to github repo, for historization and disaster recovery purposes:
 	- The '_git_repo_ops' macro set has been enhanced to query the user for a 1-72 character commit summary message
 	
-![https://i.imgur.com/Epr38R7.png](https://i.imgur.com/Epr38R7.png)
+![https://i.imgur.com/5y42HaG.png](https://i.imgur.com/5y42HaG.png)
 
 - Using UI to enable SomaFM Web Streamed Radio channel selection by displaying an index of channel names/numbers and querying the user to make a selection:
 
