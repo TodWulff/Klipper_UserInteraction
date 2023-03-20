@@ -1,6 +1,10 @@
 # Klipper_UserInteraction
 A set of macros to enable print-time user interaction with Klipper via Console and UI buttons (macros).
 
+19MAR23 Update: Added Text Decoration to the queries.  Updated code herein with the latest from my
+production printer environment.  Added verbal hinting/reminding with TTS macro calls: say & say_wait.
+![https://i.imgur.com/AvHwSYA.png](https://i.imgur.com/AvHwSYA.png) <-- macro list and comments
+
 Video of an early implementation: https://youtu.be/pgBfhVAYsHU
 
 Note that the files herein may not be the latest - 'production' code is attainable via my printer config:
@@ -13,6 +17,28 @@ Here is an example of a real world use case - optionally keeping heaters on & un
 Here is another example of a real world use case - optionally rebooting after an ERCF calibration event:
 ![ https://i.imgur.com/PvLhUWd.png](https://i.imgur.com/PvLhUWd.png)
 ![https://i.imgur.com/Tn1ANaH.png](https://i.imgur.com/Tn1ANaH.png)
+
+Here is a user-submitted example of using this macro library to implement an interactive M600 Filament Change process: 
+https://gist.github.com/Beatzoid/b66cad5ed74f2ad23529857bcc45636c
+Thanks to Discord User Beatzoid#8010 for providing this fine example.
+
+Other cases in which I employ this module in my daily printing workflow:
+- At print start, if extrusion factor or speed factor is not 100%, go interactive to give user option to reset each to 100% before commencing the print
+![https://i.imgur.com/v5AvWXp.png](https://i.imgur.com/v5AvWXp.png)
+
+- At print canx/end, give user opportunity to retain heater settings, or to turn heaters off
+- At print canx/end, give user option to retain or unload filament (12-color Multi-Material ERCF here)
+- At print end, give user opportunity to push current configs up to github repo, for historization and disaster recovery purposes
+	- The '_git_repo_ops' macro set has been enhanced to query the user for a 1-72 character commit summary message 
+![https://i.imgur.com/Epr38R7.png](https://i.imgur.com/Epr38R7.png)
+
+- Using UI to enable SomaFM Web Streamed Radio channel selection by displaying an index of channel names and number and querying the user to enter a channel number to play
+![https://i.imgur.com/IKu9OLo.png](https://i.imgur.com/IKu9OLo.png)
+
+- During calibration of ERCF Filament Encoder, for each color/cart, give user ability to restart the calibration or to accept same and continue
+- Used UI module during testing of various hardware items (i.e. servo throw angle determinations for v0.1 nozzle scrubber and side swipe klicky/euclid bed probes)
+- ... more that I cannot recall right now
+
 
 ## PREREQUISITES:
 
