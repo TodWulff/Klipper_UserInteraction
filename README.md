@@ -85,7 +85,7 @@ is (isn't) received, to enable periodic aural reminders (both beeper/buzzer if s
 exists)), to have customized exception handler macros (if the stock ones aren't to one's liking), to direct received input to a
 any user macro/klipper FW module, to have default responses generated and utilized in the event a user either neglects to provide
 a timely response or elects to select a default response, and to read-back user responses or enunciate which button stroke was 
-detected (which may be useful for those that need same (i.e. for accessibility reasons).
+detected (which may be useful for those that need same (i.e. for accessibility reasons)).
 
 Optional Parameters:
 
