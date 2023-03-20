@@ -20,10 +20,6 @@ Here is another example of a real world use case - optionally rebooting after an
 ![ https://i.imgur.com/PvLhUWd.png](https://i.imgur.com/PvLhUWd.png)
 ![https://i.imgur.com/Tn1ANaH.png](https://i.imgur.com/Tn1ANaH.png)
 
-Here is a user-submitted example of using this macro library to implement an interactive M600 Filament Change process:
-https://gist.github.com/Beatzoid/b66cad5ed74f2ad23529857bcc45636c
-Thanks to Discord User Beatzoid#8010 for providing this fine example.
-
 Other cases in which I employ this module in my daily printing workflow:
 - At print start, if extrusion factor or speed factor is not 100%, go interactive to give user option to reset each to 100% before commencing the print:
 
@@ -44,6 +40,12 @@ Other cases in which I employ this module in my daily printing workflow:
 - Used UI module during testing of various hardware items (i.e. servo throw angle determinations for v0.1 nozzle scrubber and side swipe klicky/euclid bed probes)
 - ... more that I cannot recall right now
 
+## USER-SUBMITTED USE CASES:
+
+Here is a user-submitted example of using this macro library to implement an interactive M600 Filament Change process:
+https://gist.github.com/Beatzoid/b66cad5ed74f2ad23529857bcc45636c
+Thanks to Discord User Beatzoid#8010 for providing this fine example.
+
 
 ## PREREQUISITES:
 
@@ -61,9 +63,13 @@ FW code chokes on - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_g
 Throughout my configs, virtually all gcode macros have been 'instrumented' - the first and last lines of each gcode block can be deleted.
 I have these as I have an ability to trace macro code execution and display same in the console - quite powerful for macro development/
 troubleshooting but of little/no use to others, with rare exception - 
-see: https://github.com/TodWulff/V2.2526_Config/blob/main/_debug_macros.cfg
+see: https://github.com/TodWulff/V2.2526_Config/blob/main/_trace_debug.cfg
 
-Users should consider adding a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein.  Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.  For Fluidd or other Moonraker Clients (Mooncord/Telegram Bot/...), I defer to others to adapt the macros for use therein.
+Users should consider adding a User Input macro pane, as depicted below - which calls macros herein.  
+Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.  
+For Fluidd or other Moonraker Clients (Mooncord/Telegram Bot/...), I defer to others to adapt the macros for use therein.
+
+![https://i.imgur.com/QVxLuVZ.png](https://i.imgur.com/QVxLuVZ.png)
 
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
