@@ -1,8 +1,8 @@
 # Klipper_UserInteraction
 A set of macros to enable print-time user interaction with Klipper via Console and UI buttons (macros).
 
-19MAR23 Update: Added Text Decoration to the queries.  Updated code herein with the latest from my
-production printer environment.  Added verbal hinting/reminding with TTS macro calls: say & say_wait.
+19MAR23 Update: Added default 'Text Decorations' to the queries.  Updated code herein with the latest from my
+production printer environment.  Added verbal hinting/reminding with TTS macro calls: say & say_wait
 
 Macro list/comments:
 ![https://i.imgur.com/AvHwSYA.png](https://i.imgur.com/AvHwSYA.png) 
@@ -20,7 +20,7 @@ Here is another example of a real world use case - optionally rebooting after an
 ![ https://i.imgur.com/PvLhUWd.png](https://i.imgur.com/PvLhUWd.png)
 ![https://i.imgur.com/Tn1ANaH.png](https://i.imgur.com/Tn1ANaH.png)
 
-Other cases in which I employ this module in my daily printing workflow:
+Other cases in which I employ this module in my daily printing work-flow:
 - At print start, if extrusion factor or speed factor is not 100%, go interactive to give user option to reset each to 100% before commencing the print:
 
 ![https://i.imgur.com/v5AvWXp.png](https://i.imgur.com/v5AvWXp.png)
@@ -37,7 +37,7 @@ Other cases in which I employ this module in my daily printing workflow:
 ![https://i.imgur.com/IKu9OLo.png](https://i.imgur.com/IKu9OLo.png)
 
 - During calibration of ERCF Filament Encoder, for each color/cart, give user ability to restart the calibration or to accept same and continue
-- Used UI module during testing of various hardware items (i.e. servo throw angle determinations for v0.1 nozzle scrubber and side swipe klicky/euclid bed probes)
+- Used UI module during testing of various hardware items (i.e. servo throw angle determinations for v0.1 nozzle scrubber and side swipe Klicky/Euclid bed probes)
 - ... more that I cannot recall right now
 
 ## USER-SUBMITTED USE CASES:
@@ -45,7 +45,6 @@ Other cases in which I employ this module in my daily printing workflow:
 Here is a user-submitted example of using this macro library to implement an interactive M600 Filament Change process:
 https://gist.github.com/Beatzoid/b66cad5ed74f2ad23529857bcc45636c
 Thanks to Discord User Beatzoid#8010 for providing this fine example.
-
 
 ## PREREQUISITES:
 
@@ -73,9 +72,22 @@ For Fluidd or other Moonraker Clients (Mooncord/Telegram Bot/...), I defer to ot
 
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
+One can interact directly with the module by calling get_user_input in the console with no parameters.  
+
+In this case all of the default parameters come into play.  It allows for a quick painless test to see if it is working or not.
+
+But that is only the tip of the iceberg.  The real power in this UI macro 'module' is the ability to query for specific types of 
+input (strings, floats, and integers), assign bounds to the received user input and requery or error out on out of bounds input, 
+provide customized input prompts, provide hinting at either input prompt presentation, or if an out of bounds (/latent) response
+is (isn't) received, to enable periodic aural reminders (both beeper/buzzer if so equipped, and/or with TTS (if a TTS module
+exists)), to have customized exception handler macros (if the stock ones aren't to one's liking), to direct received input to a
+any user macro/klipper FW module, to have default responses generated and utilized in the event a user either neglects to provide
+a timely response or elects to select a default response, and to read-back user responses or enunciate which button stroke was 
+detected (which may be useful for those that need same (i.e. for accessibility reasons).
+
 Optional Parameters:
 
-**`PROMPT`**		Quoted Text to display in console as a user input prompt.  Promts are vistually separated from balance
+**`PROMPT`**		Quoted Text to display in console as a user input prompt.  Prompts are visually separated from balance
 of console context via a dashed line being displayed before and after the prompt (see images below).
 
 **`RCVR_MACRO`**	Macro name to run when VALID input received - UI_INPUT param, containing user input contents is 
@@ -110,7 +122,7 @@ For integer TYPE, if **`BOUNDS_LO`** is not asserted, defaults to -999999999.
 For integer TYPE, if **`BOUNDS_HI`** is not asserted, defaults to 999999999
 
 If additional bounds testing is desired/required, it's up to the user implementing this on their printers to craft more granular
-test and validation - by way of the **`RCVR_MACRO`**.  If I've blantantly missed something, then let me know. :)
+test and validation - by way of the **`RCVR_MACRO`**.  If I've blatantly missed something, then let me know. :)
 
 For optional parameters, read the code to understand implications of relying on defaults.
 
@@ -118,8 +130,8 @@ Again, ALL parameters are optional and default to something (depicted in the fol
 
 	PROMPT="Awaiting User Input:"		displayed on the console at macro start as a user prompt
 	TYPE=STRING				'string'('str') or 'integer'('int') or 'float'('flt') - for buttons use string
-	BOUNDS_LO=1				min string chars or min numercial value (Int/Flt -999999999)
-	BOUNDS_HI=255				max string chars or max numercial value (Int/Flt  999999999)
+	BOUNDS_LO=1				min string chars or min numerical value (Int/Flt -999999999)
+	BOUNDS_HI=255				max string chars or max numerical value (Int/Flt  999999999)
 	RCVR_MACRO="_test_show_user_input"	to accept param UI_INPUT that will be an int/flt/"string" that was 
 						input and passes sniff test (simple bounding checks)
 	TO_PERIOD=120				in seconds
@@ -131,7 +143,7 @@ Again, ALL parameters are optional and default to something (depicted in the fol
 Also, there are four other module macro variables that affect the function of the macros  
 
 	variable_ui_input_check_recurse_period:	  0.5	# seconds - period between checking for input when expected - 0.5s is good - less leads to more host
-							# cycle consumption, larger leads to reduced perceived responsiveness
+														cycle consumption, larger leads to reduced perceived responsiveness
 	variable_ui_reminder_enable:		  1	# bool 1/0 - 0 overtly disables reminder bleeps regardless of RMDR_PERIOD param
 	variable_ui_enable_input_hints:		  0	# bool 1/0 - defaults to disabling hints on input prompt
 	variable_ui_disable_exception_hints:	  0	# bool 1/0 - defaults to enabling hints on an exception event
