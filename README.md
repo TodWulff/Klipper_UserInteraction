@@ -144,7 +144,6 @@ Again, ALL parameters are optional and default to something (depicted in the fol
 
 Also, there are six other module macro variables that affect the function of the macros
 
-	```
 	variable_ui_input_check_recurse_period:	  0.5	# seconds - period between checking for input when expected - 0.5s is good - less leads to more host
 								# cycle consumption, larger leads to reduced perceived responsiveness
 	variable_ui_reminder_enable:		  1	# bool 1/0 - 0 overtly disables reminder bleeps regardless of RMDR_PERIOD param
