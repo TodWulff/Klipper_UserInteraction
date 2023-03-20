@@ -25,16 +25,19 @@ https://gist.github.com/Beatzoid/b66cad5ed74f2ad23529857bcc45636c
 Thanks to Discord User Beatzoid#8010 for providing this fine example.
 
 Other cases in which I employ this module in my daily printing workflow:
-- At print start, if extrusion factor or speed factor is not 100%, go interactive to give user option to reset each to 100% before commencing the print
+- At print start, if extrusion factor or speed factor is not 100%, go interactive to give user option to reset each to 100% before commencing the print:
+
 ![https://i.imgur.com/v5AvWXp.png](https://i.imgur.com/v5AvWXp.png)
 
-- At print canx/end, give user opportunity to retain heater settings, or to turn heaters off
-- At print canx/end, give user option to retain or unload filament (12-color Multi-Material ERCF here)
-- At print end, give user opportunity to push current configs up to github repo, for historization and disaster recovery purposes
+- At print canx/end, give user opportunity to retain heater settings, or to turn heaters off;
+- At print canx/end, give user option to retain or unload filament (12-color Multi-Material ERCF here);
+- At print end, give user opportunity to push current configs up to github repo, for historization and disaster recovery purposes:
 	- The '_git_repo_ops' macro set has been enhanced to query the user for a 1-72 character commit summary message
+	
 ![https://i.imgur.com/Epr38R7.png](https://i.imgur.com/Epr38R7.png)
 
-- Using UI to enable SomaFM Web Streamed Radio channel selection by displaying an index of channel names and number and querying the user to enter a channel number to play
+- Using UI to enable SomaFM Web Streamed Radio channel selection by displaying an index of channel names/numbers and querying the user to make a selection:
+
 ![https://i.imgur.com/IKu9OLo.png](https://i.imgur.com/IKu9OLo.png)
 
 - During calibration of ERCF Filament Encoder, for each color/cart, give user ability to restart the calibration or to accept same and continue
