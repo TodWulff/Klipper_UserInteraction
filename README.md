@@ -74,7 +74,7 @@ If same is ever accomplished, author request that he be advised of same, to allo
 
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
-One can interact directly with the module by simply calling ```get_user_input>``` in the console with no parameters.  
+One can interact directly with the module by simply calling ```get_user_input``` in the console with no parameters.  
 
 In this case all of the default parameters come into play.  It allows for a quick painless test to see if it is working or not.
 
