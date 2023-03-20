@@ -66,17 +66,19 @@ see: https://github.com/TodWulff/V2.2526_Config/blob/main/_trace_debug.cfg
 
 Users should consider adding a User Input macro pane, as depicted below - which calls macros herein.  
 Orienting it under the console pane will allow it to become intuitive with a small bit of use.  Author's UI of choice is Mainsail.  
-For Fluidd or other Moonraker Clients (Mooncord/Telegram Bot/...), I defer to others to adapt the macros for use therein.
+
+For Fluidd or other Moonraker Clients (Mooncord/Telegram Bot/...), author defers to others to adapt the macros for use therein.
+If same is ever accomplished, author request that he be advised of same, to allow inclusion of same being as an element to this readme.
 
 ![https://i.imgur.com/QVxLuVZ.png](https://i.imgur.com/QVxLuVZ.png)
 
 ## Primary Macro:  GET_USER_INPUT  Parameters and related dialog follows
 
-One can interact directly with the module by calling get_user_input in the console with no parameters.  
+One can interact directly with the module by simply calling ```get_user_input>``` in the console with no parameters.  
 
 In this case all of the default parameters come into play.  It allows for a quick painless test to see if it is working or not.
 
-But that is only the tip of the iceberg.  The real power in this UI macro 'module' is the ability to query for specific types of 
+However, that is only the tip of the iceberg. The real power in this UI macro 'module' is the ability to query for specific types of 
 input (strings, floats, and integers), assign bounds to the received user input and requery or error out on out of bounds input, 
 provide customized input prompts, provide hinting at either input prompt presentation, or if an out of bounds (/latent) response
 is (isn't) received, to enable periodic aural reminders (both beeper/buzzer if so equipped, and/or with TTS (if a TTS module
