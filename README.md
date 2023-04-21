@@ -19,7 +19,7 @@ Here is an example of a real world use case - optionally keeping heaters on & un
 ![https://i.imgur.com/jfVYFZx.png](https://i.imgur.com/jfVYFZx.png)
 
 Here is another example of a real world use case - optionally rebooting after an ERCF calibration event:
-![ https://i.imgur.com/PvLhUWd.png](https://i.imgur.com/PvLhUWd.png)
+![https://i.imgur.com/PvLhUWd.png](https://i.imgur.com/PvLhUWd.png)
 ![https://i.imgur.com/Tn1ANaH.png](https://i.imgur.com/Tn1ANaH.png)
 
 Other cases in which I employ this module in my daily printing workflow:
@@ -51,6 +51,7 @@ Other cases in which I employ this module in my daily printing workflow:
 - During calibration of ERCF Filament Encoder, for each color/cart, give user ability to restart the calibration or to accept same and continue
 - Used UI module during testing of various hardware items (i.e. servo throw angle determinations for v0.1 nozzle scrubber and side swipe klicky/euclid bed probes)
 - ... more that I cannot recall right now
+
 
 ## USER-SUBMITTED USE CASES:
 
