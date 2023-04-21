@@ -29,6 +29,10 @@ Other cases in which I employ this module in my daily printing workflow:
 
 ![https://i.imgur.com/mZ7V0rl.png](https://i.imgur.com/mZ7V0rl.png)
 
+- At print start, if system cpu utilization exceeds a threshold, go interactive to give user an opportunity to resolve the issue (wait for the host to settle down (i.e. if transcoding a timelapse from a prior print), or to change the threshold value via the console).
+
+![https://i.imgur.com/RYv5SMl.png](https://i.imgur.com/RYv5SMl.png)
+
 - At print start, if extrusion factor or speed factor is not 100%, go interactive to give user option to reset each to 100% before commencing the print:
 
 ![https://i.imgur.com/v5AvWXp.png](https://i.imgur.com/v5AvWXp.png)
