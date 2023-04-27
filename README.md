@@ -1,5 +1,21 @@
 # Klipper_UserInteraction
 A set of macros to enable print-time user interaction with Klipper via Console and UI buttons (macros).
+Copyright (C) 2022-2023  Tod A. Wulff
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Should you have a need to receive a copy of the GNU General Public License,
+see <https://www.gnu.org/licenses/>.
+
+27Apr23 - Adopted GNU GPLv3 for these works.
 
 04APR23 Update: Added example of using UI Interaction during an Idle Timeout Event.
 
