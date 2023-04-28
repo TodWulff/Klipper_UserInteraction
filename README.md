@@ -17,7 +17,8 @@ see <https://www.gnu.org/licenses/>.
 
 27Apr23 - Adopted GNU GPLv3 for these works.
 
-04APR23 Update: Added example of using UI Interaction during an Idle Timeout Event.
+04APR23 Update: Added example of using UI Interaction during an Idle Timeout Event. Added example of using UI to go
+interactive with user when host system cpu utilization exceeds some programmatic value at print start.
 
 19MAR23 Update: Added Text Decoration to the queries.  Updated code herein with the latest from my
 production printer environment.  Added verbal hinting/reminding with TTS macro calls: say & say_wait.
